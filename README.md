@@ -101,13 +101,8 @@ sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install docker.io
 systemctl start docker
 systemctl enable docker
-docker build . -t openvino\
- --build-arg HTTP_PROXY=http://localhost:2000\
- --build-arg HTTPS_PROXY=https://localhost:2000
-docker build . -t openvino --build-arg HTTP_PROXY=http://167.172.49.215:2000 --build-arg HTTPS_PROXY=https://167.172.49.215:2000
-
-
-app="docker.test"
-docker build -t ${app}
+docker build . -t openvino
+source /opt/intel/openvino/bin/setupvars.sh -pyver 3.5
+python app_model.py -m model.xml
 
 ```
