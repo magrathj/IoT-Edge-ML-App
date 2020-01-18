@@ -17,7 +17,7 @@ RUN mkdir -p $TEMP_DIR && cd $TEMP_DIR && \
     sed -i 's/decline/accept/g' silent.cfg && \
     ./install.sh -s silent.cfg && \
     rm -rf $TEMP_DIR
-RUN $INSTALL_DIR/install_dependencies/install_all_dependencies.sh
+RUN $INSTALL_DIR/install_dependencies/_install_all_dependencies.sh
 # build Inference Engine samples
 RUN mkdir $INSTALL_DIR/deployment_tools/inference_engine/samples/build && cd $INSTALL_DIR/deployment_tools/inference_engine/samples/build && \
     /bin/bash -c "source $INSTALL_DIR/bin/setupvars.sh && cmake .. && make -j1"
