@@ -92,3 +92,22 @@ python app.py -i blue-car.jpg
 ```bash
 python app.py -i test_video.mp4
 ```
+
+
+
+```bash
+git clone https://github.com/magrathj/IoT-Edge-App.git
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install docker.io
+systemctl start docker
+systemctl enable docker
+docker build . -t openvino\
+ --build-arg HTTP_PROXY=http://localhost:2000\
+ --build-arg HTTPS_PROXY=https://localhost:2000
+docker build . -t openvino --build-arg HTTP_PROXY=http://167.172.49.215:2000 --build-arg HTTPS_PROXY=https://167.172.49.215:2000
+
+
+app="docker.test"
+docker build -t ${app}
+
+```
