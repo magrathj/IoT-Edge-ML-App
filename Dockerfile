@@ -19,5 +19,18 @@ RUN mkdir -p $TEMP_DIR && cd $TEMP_DIR && \
     rm -rf $TEMP_DIR
 RUN $INSTALL_DIR/install_dependencies/_install_all_dependencies.sh
 # build Inference Engine samples
-RUN mkdir $INSTALL_DIR/deployment_tools/inference_engine/samples/build && cd $INSTALL_DIR/deployment_tools/inference_engine/samples/build && \
-    /bin/bash -c "source $INSTALL_DIR/bin/setupvars.sh && cmake .. && make -j1"
+#RUN mkdir $INSTALL_DIR/deployment_tools/inference_engine/samples/build && cd $INSTALL_DIR/deployment_tools/inference_engine/samples/build && \
+#    /bin/bash -c "source $INSTALL_DIR/bin/setupvars.sh && cmake .. && make -j1"
+# Model Optimizer
+RUN cd $INSTALL_DIR/deployment_tools/model_optimizer/install_prerequisites && \
+    ./install_prerequisites.sh
+
+# clean up 
+RUN apt autoremove -y && \
+    rm -rf /openvino /var/lib/apt/lists/*
+
+RUN /bin/bash -c "source $INSTALL_DIR/bin/setupvars.sh"
+
+RUN echo "source $INSTALL_DIR/bin/setupvars.sh" >> /root/.bashrc
+
+CMD ["/bin/bash"]
