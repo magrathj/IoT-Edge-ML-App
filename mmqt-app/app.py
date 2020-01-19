@@ -10,7 +10,7 @@ from inference import Network
 
 INPUT_STREAM = "test_video.mp4"
 CPU_EXTENSION = "/opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so"
-ADAS_MODEL = "/home/workspace/models/semantic-segmentation-adas-0001.xml"
+ADAS_MODEL = "/models/semantic-segmentation-adas-0001.xml"
 
 CLASSES = ['road', 'sidewalk', 'building', 'wall', 'fence', 'pole', 
 'traffic_light', 'traffic_sign', 'vegetation', 'terrain', 'sky', 'person',

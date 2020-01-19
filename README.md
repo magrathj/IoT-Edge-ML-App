@@ -25,5 +25,5 @@ cd /opt/intel/openvino/deployment_tools/demo
 Run the app on the test_video
 
 ```bash
-python app.py -i test_video.mp4
+python app_model.py -i test_video.mp4
 ```
