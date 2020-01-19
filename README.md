@@ -9,6 +9,7 @@ sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install docker.io
 systemctl start docker
 systemctl enable docker
+cd IoT-Edge-App
 docker build . -t openvino
 sudo docker ps
 docker run -it openvino 
