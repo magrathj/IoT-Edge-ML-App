@@ -25,7 +25,7 @@ RUN mkdir -p $TEMP_DIR && cd $TEMP_DIR && \
     ./install.sh -s silent.cfg && \
     rm -rf $TEMP_DIR
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r IoT-Edge-App/requirements.txt 
 
 RUN $INSTALL_DIR/install_dependencies/install_openvino_dependencies.sh
 

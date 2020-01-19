@@ -102,8 +102,8 @@ def webcam():
 
 def main():
     args = get_args()
-    #capture_stream(args)
-    webcam()
+    capture_stream(args)
+    #webcam()
 
 if __name__ == "__main__":
     main()
